@@ -1,25 +1,15 @@
+import TextAndIconButton from "@/components/atoms/shared/TextAndIconButton.tsx";
+import ProgressBar from "@/components/atoms/shared/ProgressBar.tsx";
+
+import { kanit, outfit } from "@/utils/fonts.ts";
+import { TextAndIconButtonSize } from "@/utils/enums.ts";
+
 import Image from "next/image";
-
-import { Kanit, Outfit } from "next/font/google";
-
-const kanit = Kanit({
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-family-kanit",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const outfit = Outfit({
-  variable: "--font-family-outfit",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export default function CauseDetailsPage() {
   return (
     <div className="bg-white">
       <div className="3xl:container mx-auto px-[312px] py-[100px]">
-        {/*Top Start*/}
         <div className="space-y-10">
           <h1 className={`${outfit.className} font-bold text-heading-2`}>
             Help the helpless
@@ -28,24 +18,14 @@ export default function CauseDetailsPage() {
             <Image
               className="w-full h-[640px] rounded-xl object-cover"
               src="https://placehold.co/856"
-              alt="hero photo"
+              alt=""
               width={1296}
               height={640}
               priority
             />
           </div>
           <div>
-            <div className="space-y-[4px] mb-5">
-              <div
-                className={`${outfit.className} text-heading-5 font-bold text-primary flex justify-between items-center`}
-              >
-                <span>0%</span>
-                <span>70%</span>
-              </div>
-              <div>
-                <div className="h-[6px] w-full bg-neutral-6 rounded-lg"></div>
-              </div>
-            </div>
+            <ProgressBar percentage={50} />
             <div className="flex items-center justify-between">
               <div className={`${kanit.className} text-l text-neutral-4`}>
                 <span>Goals: </span>
@@ -62,35 +42,16 @@ export default function CauseDetailsPage() {
             </div>
           </div>
         </div>
-        {/*Top End*/}
-        {/*Middle Start*/}
         <div className="mt-5 mb-10">
-          <div className="flex items-center justify-center py-5 border-y-[1px] border-neutral-6/50">
+          <div className="flex items-center justify-center py-5 border-y border-neutral-6/50">
             <div className="text-neutral-1 text-l">
-              <button className="flex">
-                <div
-                  className={`${kanit.className} text-l  bg-primary px-6 py-2 rounded-[60px]`}
-                >
-                  Donate Now
-                </div>
-                <div className="bg-primary rounded-[60px] w-[43px] flex items-center justify-center">
-                  <Image
-                    src="/arrow-up-right.svg"
-                    alt="arrow up right icon"
-                    width={16}
-                    height={16}
-                    priority
-                    style={{
-                      filter: "invert(1)",
-                    }}
-                  />
-                </div>
-              </button>
+              <TextAndIconButton
+                text="Donate Now"
+                size={TextAndIconButtonSize.Large}
+              />
             </div>
           </div>
         </div>
-        {/*Middle End*/}
-        {/*Bottom Start*/}
         <div>
           <div className="space-y-8">
             <h1 className={`${outfit.className} font-bold text-heading-2`}>
@@ -131,7 +92,7 @@ export default function CauseDetailsPage() {
               <Image
                 className="w-full h-[640px] rounded-xl object-cover"
                 src="https://placehold.co/856"
-                alt="hero photo"
+                alt=""
                 width={1296}
                 height={640}
                 priority
@@ -139,7 +100,6 @@ export default function CauseDetailsPage() {
             </div>
           </div>
         </div>
-        {/*Bottom End*/}
       </div>
     </div>
   );
