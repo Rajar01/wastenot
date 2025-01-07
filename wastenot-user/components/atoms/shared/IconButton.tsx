@@ -13,7 +13,7 @@ export default function IconButton({
 }: IconButtonProps) {
   return (
     <div
-      className={`${size == IconButtonSize.Base ? "w-12 h-12" : "w-[50px] h-[50px]"} ${IconButtonType.Primary ? "bg-primary" : "bg-tertiary"} rounded-full flex items-center justify-center`}
+      className={`${size == IconButtonSize.Base ? "w-12 h-12" : "w-[50px] h-[50px]"} ${type == IconButtonType.Primary ? "bg-primary" : "bg-tertiary"} rounded-full flex items-center justify-center`}
     >
       {icon}
     </div>
