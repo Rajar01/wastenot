@@ -1,4 +1,4 @@
-import Logo from "@/components/atoms/Logo.tsx";
+import Logo from "@/components/atoms/shared/Logo.tsx";
 
 import { kanit, outfit } from "@/utils/fonts.ts";
 

@@ -1,5 +1,5 @@
-import TextAndIconButton from "@/components/atoms/TextAndIconButton.tsx";
-import Logo from "@/components/atoms/Logo.tsx";
+import TextAndIconButton from "@/components/atoms/shared/TextAndIconButton.tsx";
+import Logo from "@/components/atoms/shared/Logo.tsx";
 
 import { kanit } from "@/utils/fonts.ts";
 

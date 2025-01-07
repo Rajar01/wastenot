@@ -1,5 +1,5 @@
-import CircleDonatorProfileImage from "@/components/atoms/CircleDonatorProfileImage.tsx";
-import IconButton from "@/components/atoms/IconButton.tsx";
+import CircleDonatorProfileImage from "@/components/atoms/shared/CircleDonatorProfileImage.tsx";
+import IconButton from "@/components/atoms/shared/IconButton.tsx";
 
 import Image from "next/image";
 
