@@ -1,4 +1,4 @@
-import DonatorsHeader from "@/components/donators/DonatorsHeader.tsx";
+import PageHeader from "@/components/molecules/shared/PageHeader.tsx";
 
 export default function DonatorsLayout({
   children,
@@ -7,7 +7,16 @@ export default function DonatorsLayout({
 }>) {
   return (
     <>
-      <DonatorsHeader />
+      <PageHeader
+        breadcrumb={
+          <>
+            <span className="after:content-['\00a0']">Home -</span>
+            <span className="text-tertiary">Donators</span>
+          </>
+        }
+        pagename="Donators"
+        text="Meet Our Generous Donator for Food Donation"
+      />
       <div>{children}</div>
     </>
   );
