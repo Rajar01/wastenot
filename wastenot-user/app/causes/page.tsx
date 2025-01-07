@@ -7,7 +7,7 @@ export default function CausesPage() {
     <div className="bg-white">
       <div className="3xl:container mx-auto px-[312px] py-[100px]">
         <CauseCardGroup />
-        <PaginationButton totalItem={100} totalPage={9} currentPage={1} />
+        <PaginationButton totalPage={9} currentPage={1} />
       </div>
     </div>
   );
