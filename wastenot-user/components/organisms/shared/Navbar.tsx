@@ -4,8 +4,6 @@ import Logo from "@/components/atoms/shared/Logo.tsx";
 import { kanit } from "@/utils/fonts.ts";
 import { TextAndIconButtonType } from "@/utils/enums.ts";
 
-import Image from "next/image";
-
 export default function Navbar() {
   return (
     <div className={`${kanit.className} bg-primary border-b border-neutral-6`}>
