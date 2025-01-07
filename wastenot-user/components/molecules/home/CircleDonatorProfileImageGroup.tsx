@@ -1,6 +1,8 @@
 import CircleDonatorProfileImage from "@/components/atoms/shared/CircleDonatorProfileImage.tsx";
 import IconButton from "@/components/atoms/shared/IconButton.tsx";
 
+import { IconButtonType } from "@/utils/enums.ts";
+
 import Image from "next/image";
 
 export default function CircleDonatorProfileImageGroup() {
@@ -11,6 +13,7 @@ export default function CircleDonatorProfileImageGroup() {
       <CircleDonatorProfileImage url="https://placehold.co/400" />
       <IconButton
         icon={<Image src="/plus.svg" alt="" width={20} height={20} priority />}
+        type={IconButtonType.Secondary}
       />
     </div>
   );

@@ -13,6 +13,11 @@ export enum IconButtonSize {
   Large,
 }
 
+export enum IconButtonType {
+  Primary,
+  Secondary,
+}
+
 export enum HeroCardType {
   Normal,
   Highlight,
