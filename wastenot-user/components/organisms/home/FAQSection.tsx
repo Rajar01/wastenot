@@ -13,7 +13,7 @@ export default function FAQSection() {
       <div className="3xl:container mx-auto px-[312px] py-[100px] flex items-start justify-between space-x-[134px]">
         <div className="max-w-[416px] min-w-[416px] space-y-10">
           <div>
-            <IconSubtitle text="FAQ" />
+            <IconSubtitle text="Faq" />
             <div
               className={`${outfit.className} text-heading-2 font-bold mb-3`}
             >
