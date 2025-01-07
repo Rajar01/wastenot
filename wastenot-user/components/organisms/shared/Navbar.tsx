@@ -2,6 +2,7 @@ import TextAndIconButton from "@/components/atoms/shared/TextAndIconButton.tsx";
 import Logo from "@/components/atoms/shared/Logo.tsx";
 
 import { kanit } from "@/utils/fonts.ts";
+import { TextAndIconButtonType } from "@/utils/enums.ts";
 
 import Image from "next/image";
 
@@ -18,7 +19,10 @@ export default function Navbar() {
           <a>Causes</a>
         </div>
         <div className="text-neutral-3 text-l">
-          <TextAndIconButton text="Donate Now" />
+          <TextAndIconButton
+            text="Donate Now"
+            type={TextAndIconButtonType.Secondary}
+          />
         </div>
       </div>
     </div>

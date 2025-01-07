@@ -3,6 +3,11 @@ export enum TextAndIconButtonSize {
   Large,
 }
 
+export enum TextAndIconButtonType {
+  Primary,
+  Secondary,
+}
+
 export enum IconButtonSize {
   Base,
   Large,
