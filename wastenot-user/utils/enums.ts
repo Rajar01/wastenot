@@ -1,4 +1,4 @@
-export enum ButtonWithIconSize {
+export enum TextAndIconButtonSize {
   Base,
   Large,
 }

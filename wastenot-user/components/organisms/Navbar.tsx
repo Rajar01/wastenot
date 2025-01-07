@@ -1,4 +1,4 @@
-import ButtonWithIcon from "@/components/atoms/ButtonWithIcon.tsx";
+import TextAndIconButton from "@/components/atoms/TextAndIconButton.tsx";
 import Logo from "@/components/atoms/Logo.tsx";
 
 import { kanit } from "@/utils/fonts.ts";
@@ -18,7 +18,7 @@ export default function Navbar() {
           <a>Causes</a>
         </div>
         <div className="text-neutral-3 text-l">
-          <ButtonWithIcon text="Donate Now" />
+          <TextAndIconButton text="Donate Now" />
         </div>
       </div>
     </div>
