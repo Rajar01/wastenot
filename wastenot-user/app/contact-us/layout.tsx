@@ -1,4 +1,4 @@
-import ContactUsHeader from "@/components/contact-us/ContactUsHeader.tsx";
+import PageHeader from "@/components/molecules/shared/PageHeader.tsx";
 
 export default function ContactUsLayout({
   children,
@@ -7,7 +7,16 @@ export default function ContactUsLayout({
 }>) {
   return (
     <>
-      <ContactUsHeader />
+      <PageHeader
+        breadcrumb={
+          <>
+            <span className="after:content-['\00a0']">Home -</span>
+            <span className="text-tertiary">Contact Us</span>
+          </>
+        }
+        pagename="Contact Us"
+        text="Feel Free to Contact and Reach Us Now !"
+      />
       <div>{children}</div>
     </>
   );
