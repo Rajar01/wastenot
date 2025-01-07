@@ -1,7 +1,7 @@
 import "./globals.css";
 
-import Navbar from "@/components/organisms/Navbar.tsx";
-import Footer from "@/components/organisms/Footer.tsx";
+import Navbar from "@/components/organisms/shared/Navbar.tsx";
+import Footer from "@/components/organisms/shared/Footer.tsx";
 
 export default function RootLayout({
   children,
