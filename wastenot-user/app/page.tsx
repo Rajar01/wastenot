@@ -1,4 +1,4 @@
-import HeroSection from "@/components/home/HeroSection.tsx";
+import HeroSection from "@/components/organisms/home/HeroSection.tsx";
 import AboutUsSection from "@/components/home/AboutUsSection.tsx";
 import DonatorsSection from "@/components/home/DonatorsSection.tsx";
 import FAQSection from "@/components/home/FAQSection.tsx";
