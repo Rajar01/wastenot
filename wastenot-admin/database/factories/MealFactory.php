@@ -17,7 +17,8 @@ class MealFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'meal_name' => fake()->sentence(2),
+            'meal_donation_amount' => rand(1, 20),
         ];
     }
 }
