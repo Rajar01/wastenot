@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('cause_title');
             $table->longText('cause_desc');
             $table->string('cause_geocoordinate');
-	    $table->unsignedBigInteger('cause_meal_goal_amount');
-	    $table->binary('image');
+            $table->unsignedBigInteger('cause_meal_goal_amount');
+            $table->binary('image');
             $table->timestamps();
         });
     }

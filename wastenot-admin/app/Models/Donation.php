@@ -17,13 +17,12 @@ class Donation extends Model
         return $this->hasMany(Meal::class);
     }
 
-        public function donator(): BelongsTo
+    public function donator(): BelongsTo
     {
         return $this->belongsTo(Donator::class);
     }
 
-
-        public function cause(): BelongsTo
+    public function cause(): BelongsTo
     {
         return $this->belongsTo(Cause::class);
     }

@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('donators', function (Blueprint $table) {
             $table->id();
-	    $table->string('donator_name');
-	    $table->string('donator_type');
-	    $table->string('donator_phone_number');
-	    $table->binary('image');
+            $table->string('donator_name');
+            $table->string('donator_type');
+            $table->string('donator_phone_number');
+            $table->binary('image');
             $table->timestamps();
         });
     }

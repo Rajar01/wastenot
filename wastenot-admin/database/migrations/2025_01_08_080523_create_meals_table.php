@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('meal_name');
             $table->unsignedBigInteger('meal_donation_amount');
-	    $table->foreignId('donation_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('donation_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

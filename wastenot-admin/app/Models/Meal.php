@@ -12,7 +12,7 @@ class Meal extends Model
 
     protected $fillable = ['meal_name', 'meal_donation_amount', 'donation_id'];
 
-        public function donation(): BelongsTo
+    public function donation(): BelongsTo
     {
         return $this->belongsTo(Donation::class);
     }

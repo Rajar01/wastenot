@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Donator extends Model
 {
     /** @use HasFactory<\Database\Factories\DonatorFactory> */
-	use HasFactory;
+    use HasFactory;
 
-    	protected $fillable = ['donator_name', 'donator_type', 'donator_phone_number', 'image'];
+    protected $fillable = ['donator_name', 'donator_type', 'donator_phone_number', 'image'];
 
-	public function donations(): HasMany
+    public function donations(): HasMany
     {
         return $this->hasMany(Donation::class);
     }
