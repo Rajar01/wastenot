@@ -10,7 +10,9 @@ use Flowframe\Trend\TrendValue;
 class DonationsChart extends ChartWidget
 {
     protected static ?string $heading = 'Donation statistics';
-    protected int | string | array $columnSpan = 'full';
+
+    protected int|string|array $columnSpan = 'full';
+
     protected static ?int $sort = 20;
 
     protected function getData(): array
