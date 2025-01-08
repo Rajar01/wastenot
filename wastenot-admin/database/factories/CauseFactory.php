@@ -17,7 +17,10 @@ class CauseFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'cause_title' => fake()->sentence(rand(3, 7)),
+            'cause_desc' => fake()->paragraph(rand(5, 10)),
+            'cause_geocoordinate' => fake()->latitude().', '.fake()->longitude(),
+            'cause_meal_goal_amount' => rand(50, 100),
         ];
     }
 }

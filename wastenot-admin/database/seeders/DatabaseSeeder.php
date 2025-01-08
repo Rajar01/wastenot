@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Cause;
 use App\Models\Donator;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -22,5 +23,6 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Donator::factory(5)->create();
+        Cause::factory(20)->create();
     }
 }
