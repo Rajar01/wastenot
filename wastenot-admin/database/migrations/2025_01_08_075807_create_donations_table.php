@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('donations', function (Blueprint $table) {
             $table->id();
             $table->enum('donation_shipping_type', ['self-delivered', 'pickup']);
-            $table->string('donation_address');
+            $table->string('donation_address')->nullable();
             $table->foreignId('donator_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('cause_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();

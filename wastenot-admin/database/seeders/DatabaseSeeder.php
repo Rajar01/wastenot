@@ -2,8 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Cause;
-use App\Models\Donator;
+use App\Models\Donation;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -22,7 +21,6 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('123'),
         ]);
 
-        Donator::factory(5)->create();
-        Cause::factory(20)->create();
+        Donation::factory(20)->create();
     }
 }

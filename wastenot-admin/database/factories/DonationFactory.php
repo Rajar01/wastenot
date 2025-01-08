@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Cause;
+use App\Models\Donator;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,10 @@ class DonationFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'donation_address' => fake()->address(),
+            'donation_shipping_type' => fake()->randomElement(['self-delivered', 'pickup']),
+            'donator_id' => Donator::factory(),
+            'cause_id' => Cause::factory(),
         ];
     }
 }
