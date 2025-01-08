@@ -17,7 +17,8 @@ class DonatorFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'donator_name' => fake()->name(),
+            'donator_type' => fake()->randomElement(['individual', 'company', 'restaurant', 'others']),
         ];
     }
 }
