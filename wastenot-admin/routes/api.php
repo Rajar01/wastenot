@@ -14,3 +14,7 @@ Route::get('/donators', function (Request $request) {
 Route::get('/causes', function (Request $request) {
     return CauseResource::collection(Cause::paginate(12));
 });
+
+Route::get('/causes/{id}', function (Request $request) {
+    return new CauseResource(Cause::find($request->id));
+});

@@ -19,6 +19,7 @@ class CauseResource extends JsonResource
             'id' => $this->id,
             'cause_title' => $this->cause_title,
             'cause_desc' => $this->cause_desc,
+            'cause_geocoordinate' => $this->cause_geocoordinate,
             'cause_meal_goal_amount' => $this->cause_meal_goal_amount,
             'image' => $this->image == null ? null : asset('storage/'.$this->image),
             'cause_meal_raised_amount' => Donation::with('meals')->where('cause_id', $this->id)->first()->meals->sum('meal_donation_amount'),
