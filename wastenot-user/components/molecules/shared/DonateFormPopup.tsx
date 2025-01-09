@@ -9,6 +9,7 @@ import { sleep } from "@/utils/helpers.ts";
 
 import Image from "next/image";
 import { toast } from "react-hot-toast";
+import { useState } from "react";
 
 interface DonateFormPopupProps {
   active: boolean;
