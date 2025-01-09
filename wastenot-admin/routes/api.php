@@ -19,6 +19,7 @@ Route::get('/causes', function (Request $request) {
 });
 
 Route::get('/causes/{id}', function (Request $request) {
+
     return new CauseResource(Cause::find($request->id));
 });
 
