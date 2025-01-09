@@ -6,10 +6,14 @@ import { kanit, outfit } from "@/utils/fonts.ts";
 import { BASE_API_URL } from "@/utils/consts.ts";
 
 export default async function HeroSection() {
+	let totalDonators = 0;
+
   const fetchDonatorPhotoURLs = async () => {
     const response = await fetch(`${BASE_API_URL}/donators`);
 
     const data = await response.json();
+
+    totalDonators = data['meta']['total'];
 
     return data["data"].map((o) => o["photo"]);
   };
@@ -40,7 +44,7 @@ export default async function HeroSection() {
               />
               <div>
                 <span className={`${kanit.className} text-xl font-medium`}>
-                  {donatorPhotoURLs.length}+ Donators
+                  {totalDonators}+ Donators
                 </span>
               </div>
             </div>
