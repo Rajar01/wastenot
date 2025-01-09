@@ -3,21 +3,43 @@ import ProgressBar from "@/components/atoms/shared/ProgressBar.tsx";
 
 import { kanit, outfit } from "@/utils/fonts.ts";
 import { TextAndIconButtonSize } from "@/utils/enums.ts";
+import { BASE_API_URL } from "@/utils/consts.ts";
+import { getPercentage, removeAllWhiteSpace } from "@/utils/helpers.ts";
 
 import Image from "next/image";
 
-export default function CauseDetailsPage() {
+export default async function CauseDetailsPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const causeId = (await params).id;
+
+  const fetchCause = async () => {
+    const response = await fetch(`${BASE_API_URL}/causes/${causeId}`);
+
+    const data = await response.json();
+
+    return data["data"];
+  };
+
+  const cause = await fetchCause();
+
   return (
     <div className="bg-white">
       <div className="3xl:container mx-auto px-[312px] py-[100px]">
         <div className="space-y-10">
           <h1 className={`${outfit.className} font-bold text-heading-2`}>
-            Help the helpless
+            {cause["cause_title"]}
           </h1>
           <div>
             <Image
-              className="w-full h-[640px] rounded-xl object-cover"
-              src="https://placehold.co/856"
+              className="w-full h-[640px] rounded-xl object-cover object-center"
+              src={
+                cause["photo"] == null
+                  ? "https://placehold.co/600x400?text=No+Photo&font=roboto"
+                  : cause["photo"]
+              }
               alt=""
               width={1296}
               height={640}
@@ -25,18 +47,23 @@ export default function CauseDetailsPage() {
             />
           </div>
           <div>
-            <ProgressBar percentage={50} />
+            <ProgressBar
+              percentage={getPercentage(
+                cause["cause_meal_raised_amount"],
+                cause["cause_meal_goal_amount"],
+              )}
+            />
             <div className="flex items-center justify-between">
               <div className={`${kanit.className} text-l text-neutral-4`}>
                 <span>Goals: </span>
                 <span className={`${kanit.className} text-xl text-neutral-3`}>
-                  100 meals
+                  {cause["cause_meal_goal_amount"]}
                 </span>
               </div>
               <div className={`${kanit.className} text-l text-neutral-4`}>
                 <span>Raised: </span>
                 <span className={`${kanit.className} text-xl text-neutral-3`}>
-                  20 meals
+                  {cause["cause_meal_raised_amount"]}
                 </span>
               </div>
             </div>
@@ -60,43 +87,23 @@ export default function CauseDetailsPage() {
             <p
               className={`${kanit.className} text-justify text-neutral-4 text-m font-light`}
             >
-              Lorem ipsum dolor sit amet consectetur. Tellus cursus enim
-              pellentesque magna. Phasellus consequat purus id at malesuada.
-              Pellentesque egestas leo tincidunt donec dapibus. Elit massa enim
-              sem praesent amet ullamcorper quam egestas vulputate. Dolor
-              pretium adipiscing dolor mus facilisi. Feugiat auctor sagittis nec
-              volutpat. Amet at lacus faucibus pulvinar pulvinar nunc.
-              Adipiscing sed sem risus integer amet sed. Fusce lectus libero dui
-              ipsum semper commodo enim lorem. Magna ut habitasse dolor diam
-              magna vitae. Commodo tristique donec sem sagittis in odio sed
-              cursus cras. Urna nunc arcu in dolor sapien amet. Volutpat ornare
-              cursus rhoncus tortor. Ut sit sapien pulvinar vel eget tellus nec.
-              Urna sed sodales fermentum nibh amet ipsum congue diam at. Sit in
-              cursus amet sit id. Ullamcorper sed laoreet posuere facilisi risus
-              enim purus et enim. At nullam vel auctor habitant enim. Varius
-              eget porttitor auctor hendrerit nulla tortor ultrices nisl.
-              Viverra elementum eget est condimentum ornare. Vitae praesent duis
-              nisi augue quis sed sed. Ultrices nibh convallis est enim leo
-              molestie magna tristique. Neque molestie justo pulvinar aliquet
-              id. Consequat in amet curabitur vitae sit pretium integer
-              tincidunt eget. Laoreet nisl adipiscing risus cras sed sed. Leo at
-              dictum pellentesque tempus aliquet ultricies etiam ut. Eleifend at
-              mauris sit accumsan libero quam.
+              {cause["cause_desc"]}
             </p>
           </div>
           <div className="space-y-8 mt-10">
             <h1 className={`${outfit.className} font-bold text-heading-2`}>
               Cause Location
             </h1>
-            <div>
-              <Image
-                className="w-full h-[640px] rounded-xl object-cover"
-                src="https://placehold.co/856"
-                alt=""
-                width={1296}
-                height={640}
-                priority
-              />
+            <div className="w-full">
+              <iframe
+                width="100%"
+                height="600"
+                frameBorder="0"
+                scrolling="no"
+                marginHeight="0"
+                marginWidth="0"
+                src={`https://www.google.com/maps?q=${removeAllWhiteSpace(cause["cause_geocoordinate"])}&hl=es;z%3D14&amp&output=embed`}
+              ></iframe>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@ import Chip from "@/components/atoms/shared/Chip.tsx";
 import ProgressBar from "@/components/atoms/shared/ProgressBar.tsx";
 
 import { kanit, outfit } from "@/utils/fonts.ts";
-import { roundToDecimal } from "@/utils/helpers.ts";
+import { getPercentage } from "@/utils/helpers.ts";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -24,16 +24,6 @@ export default function CauseCard({
   raised,
   imageURL,
 }: CauseCardProps) {
-  const getPercentage = () => {
-    const result = roundToDecimal((raised / goal) * 100, 2);
-
-    if (raised >= goal) {
-      return 100;
-    }
-
-    return result;
-  };
-
   return (
     <div className="border border-neutral-6 rounded-xl px-4 pt-4 pb-5">
       <div className="mb-5 -space-y-6 max-w-[384px] min-w-[384px]">
@@ -62,7 +52,7 @@ export default function CauseCard({
         >
           {description}
         </div>
-        <ProgressBar percentage={getPercentage()} />
+        <ProgressBar percentage={getPercentage(raised, goal)} />
         <div
           className={`${outfit.className} text-center text-heading-5 font-bold text-primary underline`}
         >
