@@ -34,7 +34,7 @@ export default function CausesPage() {
 
   useEffect(() => {
     fetchCauses();
-  }, []);
+  }, [currentPage]);
 
   return (
     <div className="bg-white">

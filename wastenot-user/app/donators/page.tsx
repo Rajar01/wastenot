@@ -36,7 +36,7 @@ export default function DonatorsPage() {
 
   useEffect(() => {
     fetchDonators();
-  }, []);
+  }, [currentPage]);
 
   return (
     <div className="bg-white">
