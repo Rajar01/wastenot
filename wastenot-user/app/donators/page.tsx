@@ -13,7 +13,7 @@ export default function DonatorsPage() {
   const [lastPage, setLastPage] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const fetchDonators = async (page: number) => {
+  const fetchDonators = async () => {
     const response = await fetch(
       `${BASE_API_URL}/donators?page=${currentPage}`,
     );
@@ -35,8 +35,8 @@ export default function DonatorsPage() {
   };
 
   useEffect(() => {
-    fetchDonators(currentPage);
-  }, [currentPage]);
+    fetchDonators();
+  }, []);
 
   return (
     <div className="bg-white">
