@@ -17,7 +17,7 @@ export default async function HeroSection() {
   const donatorPhotoURLs = await fetchDonatorPhotoURLs();
 
   return (
-    <div id="wrapper" className="bg-primary">
+    <div id="hero" className="bg-primary">
       <div className="3xl:container mx-auto px-[312px] py-40 space-y-[60px]">
         <div className="flex justify-between items-center text-neutral-1 ">
           <div

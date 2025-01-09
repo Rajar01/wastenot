@@ -1,19 +1,27 @@
+"use client";
+
 import IconButton from "@/components/atoms/shared/IconButton.tsx";
 
 import { kanit } from "@/utils/fonts.ts";
 
 import Image from "next/image";
+import { useState } from "react";
+
 interface FAQQuestionCardProps {
   question: string;
   answer: string;
-  isActive?: boolean;
 }
 
 export default function FAQQuestionCard({
   question,
   answer,
-  isActive = false,
 }: FAQQuestionCardProps) {
+  const [isActive, setIsActive] = useState(false);
+
+  const onFaqBtnClick = () => {
+    setIsActive(!isActive);
+  };
+
   return (
     <div
       className={`${isActive ? "bg-tertiary" : "border border-neutral-6"} w-full px-5 py-4 rounded-xl space-y-3`}
@@ -23,6 +31,7 @@ export default function FAQQuestionCard({
           {question}
         </div>
         <IconButton
+          onIconBtnClick={onFaqBtnClick}
           icon={
             isActive ? (
               <Image

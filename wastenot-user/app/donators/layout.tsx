@@ -1,5 +1,11 @@
 import PageHeader from "@/components/molecules/shared/PageHeader.tsx";
 
+export function generateMetadata({}: Props): Promise<Metadata> {
+  return {
+    title: "WasteNot - Donators",
+  };
+}
+
 export default function DonatorsLayout({
   children,
 }: Readonly<{

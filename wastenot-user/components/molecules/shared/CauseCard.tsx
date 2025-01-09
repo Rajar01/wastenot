@@ -38,7 +38,9 @@ export default function CauseCard({
           />
         </div>
         <div className="flex justify-end">
-          <Chip text="Donate Now" />
+          <Link href={`/causes/${id}`}>
+            <Chip text="Donate Now" />
+          </Link>
         </div>
       </div>
       <div>

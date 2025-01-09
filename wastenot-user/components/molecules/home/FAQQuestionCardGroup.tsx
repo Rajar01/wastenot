@@ -10,7 +10,6 @@ export default function FAQQuestionCardGroup() {
       <FAQQuestionCard
         question="What types of food donations are typically accepted"
         answer="Most food banks and charities welcome non-perishable, unopened, and unexpired food items. This usually includes canned goods (fruits, vegetables, soups, beans), boxed meals, pasta, rice, and other shelf-stable items. However, it's crucial to check the specific guidelines of the organization you're donating to, as some may have preferences or restrictions on certain items."
-        isActive={true}
       />
       <FAQQuestionCard
         question="Will my contributions be appreciated?"

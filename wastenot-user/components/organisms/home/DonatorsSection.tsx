@@ -6,6 +6,8 @@ import DonatorCardGroup from "@/components/molecules/home/DonatorCardGroup.tsx";
 import { outfit } from "@/utils/fonts.ts";
 import { BASE_API_URL } from "@/utils/consts.ts";
 
+import Link from "next/link";
+
 export default async function DonatorsSection() {
   const fetchDonators = async () => {
     const response = await fetch(`${BASE_API_URL}/donators`);
@@ -18,7 +20,7 @@ export default async function DonatorsSection() {
   const donators = await fetchDonators();
 
   return (
-    <div className="bg-neutral-1">
+    <div id="donators" className="bg-neutral-1">
       <div className="3xl:container mx-auto px-[312px] py-[100px]">
         <div className="flex items-center justify-between mb-[60px]">
           <div className="space-y-4">
@@ -30,7 +32,9 @@ export default async function DonatorsSection() {
               </span>
             </div>
           </div>
-          <TextAndIconButton text="View all" />
+          <Link href="/donators">
+            <TextAndIconButton text="View all" />
+          </Link>
         </div>
         <DonatorCardGroup donators={donators} />
       </div>

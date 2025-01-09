@@ -6,10 +6,11 @@ import FAQQuestionCardGroup from "@/components/molecules/home/FAQQuestionCardGro
 import { kanit, outfit } from "@/utils/fonts.ts";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FAQSection() {
   return (
-    <div className="bg-neutral-2">
+    <div id="faq" className="bg-neutral-2">
       <div className="3xl:container mx-auto px-[312px] py-[100px] flex items-start justify-between space-x-[134px]">
         <div className="max-w-[416px] min-w-[416px] space-y-10">
           <div>
@@ -49,7 +50,9 @@ export default function FAQSection() {
               </div>
             </div>
             <div className="w-full">
-              <Button text="Get in touch" />
+              <Link href="/contact-us">
+                <Button text="Get in touch" />
+              </Link>
             </div>
           </div>
         </div>

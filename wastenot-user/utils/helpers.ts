@@ -16,3 +16,5 @@ export function getPercentage(numerator: number, divider: number) {
 export function removeAllWhiteSpace(input: string): string {
   return input.replace(/\s+/g, "");
 }
+
+export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));

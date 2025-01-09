@@ -6,7 +6,7 @@ import DonatorCardGroup from "@/components/molecules/donator/DonatorCardGroup.ts
 
 import { BASE_API_URL } from "@/utils/consts.ts";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function DonatorsPage() {
   const [donators, setDonators] = useState([]);

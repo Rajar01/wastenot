@@ -3,6 +3,7 @@ import Logo from "@/components/atoms/shared/Logo.tsx";
 import { kanit, outfit } from "@/utils/fonts.ts";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -15,30 +16,34 @@ export default function Footer() {
             hunger, and build a more food-secure future for everyone.
           </p>
           <div className="flex space-x-3">
-            <div className="w-10 h-10 border-neutral-1 border rounded-full flex items-center justify-center">
-              <Image
-                src="/facebook.svg"
-                alt=""
-                width={20}
-                height={20}
-                priority
-                style={{
-                  filter: "invert(1)",
-                }}
-              />
-            </div>
-            <div className="w-10 h-10 border-neutral-1 border rounded-full flex items-center justify-center">
-              <Image
-                src="/instagram.svg"
-                alt=""
-                width={20}
-                height={20}
-                priority
-                style={{
-                  filter: "invert(1)",
-                }}
-              />
-            </div>
+            <Link href="https://www.yzu.edu.tw/" target="_blank">
+              <div className="w-10 h-10 border-neutral-1 border rounded-full flex items-center justify-center">
+                <Image
+                  src="/facebook.svg"
+                  alt=""
+                  width={20}
+                  height={20}
+                  priority
+                  style={{
+                    filter: "invert(1)",
+                  }}
+                />
+              </div>
+            </Link>
+            <Link href="https://www.yzu.edu.tw/" target="_blank">
+              <div className="w-10 h-10 border-neutral-1 border rounded-full flex items-center justify-center">
+                <Image
+                  src="/instagram.svg"
+                  alt=""
+                  width={20}
+                  height={20}
+                  priority
+                  style={{
+                    filter: "invert(1)",
+                  }}
+                />
+              </div>
+            </Link>
           </div>
         </div>
         <div className="space-y-8">
@@ -46,10 +51,18 @@ export default function Footer() {
             Quick Link
           </div>
           <div className="font-light text-m flex flex-col space-y-3">
-            <a>About Us</a>
-            <a>Donators</a>
-            <a>FAQ</a>
-            <a>Causes</a>
+            <Link href="/#about-us" className="hover:text-tertiary">
+              About Us
+            </Link>
+            <Link href="/donators" className="hover:text-tertiary">
+              Donators
+            </Link>
+            <Link href="/#faq" className="hover:text-tertiary">
+              FAQ
+            </Link>
+            <Link href="/causes" className="hover:text-tertiary">
+              Causes
+            </Link>
           </div>
         </div>
         <div className="space-y-8">

@@ -4,15 +4,16 @@ import IconSubtitle from "@/components/atoms/shared/IconSubtitle.tsx";
 import { kanit, outfit } from "@/utils/fonts.ts";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutUsSection() {
   return (
-    <div className="bg-neutral-2">
+    <div id="about-us" className="bg-neutral-2">
       <div className="3xl:container mx-auto px-[312px] py-[100px] flex flex-row items-center justify-between space-x-20">
         <div className="flex-1">
           <Image
             className="object-cover w-[580px] h-[584px]"
-            src="/about-us.svg"
+            src="/about-us.png"
             alt=""
             width={580}
             height={584}
@@ -43,7 +44,9 @@ export default function AboutUsSection() {
               hungry.
             </div>
           </div>
-          <TextAndIconButton text="Donate Now" />
+          <Link href="/causes">
+            <TextAndIconButton text="Donate Now" />
+          </Link>
         </div>
       </div>
     </div>
