@@ -10,7 +10,7 @@ export default function CircleDonatorProfileImage({
   return (
     <div>
       <Image
-        className="rounded-full border-2 border-neutral-1"
+        className="rounded-full w-12 h-12 object-cover object-center border-2 border-neutral-1"
         src={url}
         alt=""
         width={48}

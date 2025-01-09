@@ -4,8 +4,19 @@ import TextAndIconButton from "@/components/atoms/shared/TextAndIconButton.tsx";
 import DonatorCardGroup from "@/components/molecules/home/DonatorCardGroup.tsx";
 
 import { outfit } from "@/utils/fonts.ts";
+import { BASE_API_URL } from "@/utils/consts.ts";
 
-export default function DonatorsSection() {
+export default async function DonatorsSection() {
+  const fetchDonators = async () => {
+    const response = await fetch(`${BASE_API_URL}/donators`);
+
+    const data = await response.json();
+
+    return data["data"].slice(0, 4);
+  };
+
+  const donators = await fetchDonators();
+
   return (
     <div className="bg-neutral-1">
       <div className="3xl:container mx-auto px-[312px] py-[100px]">
@@ -21,7 +32,7 @@ export default function DonatorsSection() {
           </div>
           <TextAndIconButton text="View all" />
         </div>
-        <DonatorCardGroup />
+        <DonatorCardGroup donators={donators} />
       </div>
     </div>
   );

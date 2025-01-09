@@ -4,8 +4,19 @@ import TextAndIconButton from "@/components/atoms/shared/TextAndIconButton.tsx";
 import CauseCardGroup from "@/components/molecules/home/CauseCardGroup.tsx";
 
 import { outfit } from "@/utils/fonts.ts";
+import { BASE_API_URL } from "@/utils/consts.ts";
 
-export default function CausesSection() {
+export default async function CausesSection() {
+  const fetchCauses = async () => {
+    const response = await fetch(`${BASE_API_URL}/causes`);
+
+    const data = await response.json();
+
+    return data["data"].slice(0, 6);
+  };
+
+  const causes = await fetchCauses();
+
   return (
     <div className="bg-white">
       <div className="3xl:container mx-auto px-[312px] py-[100px]">
@@ -21,7 +32,7 @@ export default function CausesSection() {
           </div>
           <TextAndIconButton text="View all" />
         </div>
-        <CauseCardGroup />
+        <CauseCardGroup causes={causes} />
       </div>
     </div>
   );

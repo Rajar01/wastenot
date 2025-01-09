@@ -3,8 +3,19 @@ import HeroImageGroup from "@/components/molecules/home/HeroImageGroup.tsx";
 import HeroCardGroup from "@/components/molecules/home/HeroCardGroup.tsx";
 
 import { kanit, outfit } from "@/utils/fonts.ts";
+import { BASE_API_URL } from "@/utils/consts.ts";
 
-export default function HeroSection() {
+export default async function HeroSection() {
+  const fetchDonatorPhotoURLs = async () => {
+    const response = await fetch(`${BASE_API_URL}/donators`);
+
+    const data = await response.json();
+
+    return data["data"].map((o) => o["photo"]);
+  };
+
+  const donatorPhotoURLs = await fetchDonatorPhotoURLs();
+
   return (
     <div id="wrapper" className="bg-primary">
       <div className="3xl:container mx-auto px-[312px] py-40 space-y-[60px]">
@@ -24,10 +35,12 @@ export default function HeroSection() {
               for everyone.
             </p>
             <div className="flex items-center space-x-3">
-              <CircleDonatorProfileImageGroup />
+              <CircleDonatorProfileImageGroup
+                donatorPhotoURLs={donatorPhotoURLs.slice(0, 4)}
+              />
               <div>
                 <span className={`${kanit.className} text-xl font-medium`}>
-                  175+ Donators
+                  {donatorPhotoURLs.length}+ Donators
                 </span>
               </div>
             </div>
