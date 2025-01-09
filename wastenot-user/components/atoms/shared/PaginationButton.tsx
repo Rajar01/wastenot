@@ -1,13 +1,21 @@
 import { kanit } from "@/utils/fonts.ts";
 
 interface PaginationButtonProps {
-  totalPage: number;
+  lastPage: number;
   currentPage: number;
+  isPrevBtnDisabled: boolean;
+  isPNextBtnDisabled: boolean;
+  onPrevBtnClick: () => void;
+  onNextBtnClick: () => void;
 }
 
 export default function PaginationButton({
-  totalPage,
+  lastPage,
   currentPage,
+  isPrevBtnDisabled,
+  isNextBtnDisabled,
+  onPrevBtnClick,
+  onNextBtnClick,
 }: PaginationButtonProps) {
   return (
     <div
@@ -19,14 +27,22 @@ export default function PaginationButton({
           {currentPage}
         </span>
         <span className="after:content-['\00a0']">of</span>
-        <span className="font-medium after:content-['\00a0']">{totalPage}</span>
+        <span className="font-medium after:content-['\00a0']">{lastPage}</span>
         <span>Pages</span>
       </div>
       <div className="text-l">
-        <button className="px-6 py-3 bg-tertiary rounded-tl-lg rounded-bl-lg">
+        <button
+          disabled={isPrevBtnDisabled}
+          onClick={onPrevBtnClick}
+          className="disabled:opacity-50 px-6 py-3 bg-tertiary rounded-tl-lg rounded-bl-lg"
+        >
           Prev
         </button>
-        <button className="px-6 py-3 bg-primary text-white rounded-tr-lg rounded-br-lg">
+        <button
+          disabled={isNextBtnDisabled}
+          onClick={onNextBtnClick}
+          className="disabled:opacity-50 px-6 py-3 bg-primary text-white rounded-tr-lg rounded-br-lg"
+        >
           Next
         </button>
       </div>

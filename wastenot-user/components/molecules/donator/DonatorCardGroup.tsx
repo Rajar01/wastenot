@@ -1,68 +1,32 @@
 import DonatorCard from "@/components/atoms/shared/DonatorCard.tsx";
 
-export default function DonatorCardGroup() {
+type Donator = {
+  id: number;
+  donator_name: string;
+  donator_type: string;
+  donator_phone_number: string;
+  photo: string;
+};
+
+interface DonatorCardGroupProps {
+  donators: Donator[];
+}
+
+export default function DonatorCardGroup({ donators }: DonatorCardGroupProps) {
   return (
     <div className="grid grid-cols-4 gap-6 mb-[60px]">
-      <DonatorCard
-        title="Cody Fisher"
-        subtitle="VP of Security"
-        imageURL="https://placehold.co/856"
-      />
-      <DonatorCard
-        title="Cody Fisher"
-        subtitle="VP of Security"
-        imageURL="https://placehold.co/856"
-      />
-      <DonatorCard
-        title="Cody Fisher"
-        subtitle="VP of Security"
-        imageURL="https://placehold.co/856"
-      />
-      <DonatorCard
-        title="Cody Fisher"
-        subtitle="VP of Security"
-        imageURL="https://placehold.co/856"
-      />
-      <DonatorCard
-        title="Cody Fisher"
-        subtitle="VP of Security"
-        imageURL="https://placehold.co/856"
-      />
-      <DonatorCard
-        title="Cody Fisher"
-        subtitle="VP of Security"
-        imageURL="https://placehold.co/856"
-      />
-      <DonatorCard
-        title="Cody Fisher"
-        subtitle="VP of Security"
-        imageURL="https://placehold.co/856"
-      />
-      <DonatorCard
-        title="Cody Fisher"
-        subtitle="VP of Security"
-        imageURL="https://placehold.co/856"
-      />
-      <DonatorCard
-        title="Cody Fisher"
-        subtitle="VP of Security"
-        imageURL="https://placehold.co/856"
-      />
-      <DonatorCard
-        title="Cody Fisher"
-        subtitle="VP of Security"
-        imageURL="https://placehold.co/856"
-      />
-      <DonatorCard
-        title="Cody Fisher"
-        subtitle="VP of Security"
-        imageURL="https://placehold.co/856"
-      />
-      <DonatorCard
-        title="Cody Fisher"
-        subtitle="VP of Security"
-        imageURL="https://placehold.co/856"
-      />
+      {donators.map((donator) => (
+        <DonatorCard
+          key={donator["id"]}
+          title={donator["donator_name"]}
+          subtitle={donator["donator_type"]}
+          imageURL={
+            donator["photo"] == null
+              ? "https://placehold.co/600x400?text=No+Photo&font=roboto"
+              : donator["photo"]
+          }
+        />
+      ))}
     </div>
   );
 }
