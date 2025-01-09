@@ -59,16 +59,6 @@ export default function ContactUsPage() {
         </div>
         <ContactUsForm />
       </div>
-      <div>
-        <Image
-          className="w-full h-[500px] object-cover"
-          src="https://placehold.co/856"
-          alt=""
-          width={1920}
-          height={500}
-          priority
-        />
-      </div>
     </div>
   );
 }
