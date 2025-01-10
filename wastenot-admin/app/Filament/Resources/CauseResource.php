@@ -31,7 +31,7 @@ class CauseResource extends Resource
                     ->maxLength(255)
                     ->columnSpanFull(),
                 Textarea::make('cause_desc')->label('Cause description')->required()->rows(10)->columnSpanFull(),
-                TextInput::make('cause_geocoordinate')->label('Cause geocoordinate')->required(),
+                TextInput::make('cause_geocoordinate')->label('Cause location')->required(),
                 TextInput::make('cause_meal_goal_amount')->label('Cause meal goal amount')->required()->numeric()->minValue(1),
                 FileUpload::make('image')
                     ->image()
