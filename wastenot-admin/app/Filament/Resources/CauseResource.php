@@ -46,7 +46,7 @@ class CauseResource extends Resource
             ->columns([
                 TextColumn::make('cause_title')->wrap(),
                 TextColumn::make('cause_desc')->limit(20)->wrap(),
-                TextColumn::make('cause_geocoordinate'),
+                TextColumn::make('cause_geocoordinate')->label('Cause location'),
                 TextColumn::make('cause_meal_goal_amount')->numeric(),
                 ImageColumn::make('image')->label('Photo')->square()->defaultImageUrl(url('https://placehold.co/600x400?text=No+Photo&font=roboto'))->size(50),
             ])
